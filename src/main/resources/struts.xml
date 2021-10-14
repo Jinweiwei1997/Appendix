@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <constant name="struts.i18n.encoding" value="utf-8"></constant>
+    <package name="strutsBean" extends="struts-default">
+    <action name="contantAction" class="action.ContactAction" method="addContact">
+        <result name="success">/index.jsp</result>
+        <result name="fail">/progress.html</result>
+    </action>
+    </package>
+
+</struts>
