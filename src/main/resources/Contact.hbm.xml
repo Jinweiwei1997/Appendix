@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hibernate-mapping package="po" xmlns="http://www.hibernate.org/xsd/hibernate-mapping">
+    <class name="Conctact" table="contact">
+        <id name="id" column="id">
+            <generator class="identity"></generator>
+        </id>
+        <property name="email" column="contact_email">
+        </property>
+        <property name="advice" column="contact_advice"></property>
+        <property name="name" column="contact_name"></property>
+    </class>
+</hibernate-mapping>

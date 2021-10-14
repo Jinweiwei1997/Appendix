@@ -1,13 +1,25 @@
 package dao;
 
+import Util.HibernateUtil;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 import po.Conctact;
 
 public class ContactDao {
-    private Conctact conctact=new Conctact();
+    Session session = HibernateUtil.getSession();
+
     public String addAdvice(Conctact conctact){
-        if(conctact.getName()!="")
-        return "true";
-        else
+        Transaction ts = session.beginTransaction();
+        try {
+            session.save(conctact);
+            ts.commit();
+            return "true";
+        }catch (Exception e) {
+            System.out.println(e);
             return "false";
+        } finally {
+            if(session != null)
+                session.close();
+        }
     }
 }
